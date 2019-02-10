@@ -9,7 +9,7 @@ describe("App", () => {
     expect(app).toMatchSnapshot();
   });
 
-  it("renders a h1 child element", () => {
-    expect(app.find("h1").length).toEqual(2);
+  it("renders a Navbar component", () => {
+    expect(app.find("Navbar").length).toEqual(1);
   });
 });
