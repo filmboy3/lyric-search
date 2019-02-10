@@ -10,6 +10,6 @@ describe("App", () => {
   });
 
   it("renders a h1 child element", () => {
-    expect(app.find("h1").length).toEqual(2);
+    expect(app.find("h1").length).toEqual(1);
   });
 });
