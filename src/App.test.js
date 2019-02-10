@@ -8,8 +8,4 @@ describe("App", () => {
   it("renders correctly", () => {
     expect(app).toMatchSnapshot();
   });
-
-  it("renders a Navbar component", () => {
-    expect(app.find("Navbar").length).toEqual(1);
-  });
 });
