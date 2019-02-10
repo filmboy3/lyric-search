@@ -17,9 +17,11 @@ export class Provider extends Component {
         process.env.REACT_APP_MM_KEY
       }`
     )
-      .then(response => response.json())
+      .then(res => res.json())
       .catch(error => console.error("Error:", error))
-      .then(response => console.log("Success:", JSON.stringify(response)));
+      .then(res => {
+        this.setState({ trackList: res.message.body.track_list });
+      });
   }
 
   render() {
