@@ -18,7 +18,9 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h1>
+      "children": <h1
+        className="header"
+      >
         Hello
       </h1>,
       "className": "App",
@@ -30,6 +32,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": "Hello",
+        "className": "header",
       },
       "ref": null,
       "rendered": "Hello",
@@ -43,7 +46,9 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <h1>
+        "children": <h1
+          className="header"
+        >
           Hello
         </h1>,
         "className": "App",
@@ -55,6 +60,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Hello",
+          "className": "header",
         },
         "ref": null,
         "rendered": "Hello",

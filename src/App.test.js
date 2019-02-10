@@ -8,4 +8,8 @@ describe("App", () => {
   it("renders correctly", () => {
     expect(app).toMatchSnapshot();
   });
+
+  it("renders a h1 child element", () => {
+    expect(app.find("h1").length).toEqual(2);
+  });
 });
