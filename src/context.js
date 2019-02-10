@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 const Context = React.createContext();
 
@@ -10,6 +11,13 @@ export class Provider extends Component {
     ],
     heading: "Top 10 Tracks"
   };
+
+  componentDidMount() {
+    fetch()
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
+  }
 
   render() {
     return (

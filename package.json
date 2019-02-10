@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "fork-ts-checker-webpack-plugin": "^0.5.2",
     "react": "^16.7.0",
     "react-bootstrap": "^0.32.1",
