@@ -4,10 +4,7 @@ const Context = React.createContext();
 
 export class Provider extends Component {
   state = {
-    track_list: [
-      { track: { track_name: "abc" } },
-      { track: { track_name: "123" } }
-    ],
+    trackList: [],
     heading: "Top 10 Tracks"
   };
 
@@ -20,6 +17,7 @@ export class Provider extends Component {
       .then(res => res.json())
       .catch(error => console.error("Error:", error))
       .then(res => {
+        console.log(res.message.body.track_list);
         this.setState({ trackList: res.message.body.track_list });
       });
   }
