@@ -8,7 +8,7 @@ class Search extends Component {
 
   updateTitle = event => {
     this.setState({
-      trackTitle: event.target.value
+      [event.target.name]: event.target.value
     });
   };
 
