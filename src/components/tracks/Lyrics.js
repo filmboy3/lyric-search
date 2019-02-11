@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Spinner from "../layout/Spinner";
 import { Link } from "react-router-dom";
+import Moment from "react-moment";
 
 class Lyrics extends Component {
   state = {
@@ -66,6 +67,14 @@ class Lyrics extends Component {
                     track.primary_genres.music_genre_list[0].music_genre
                       .music_genre_name
                   }
+                </li>
+                <li className="list-group-item">
+                  <strong>Explicit Words</strong>:{" "}
+                  {track.explicit ? "Yes" : "No"}
+                </li>
+                <li className="list-group-item">
+                  <strong>Release Date</strong>:{" "}
+                  <Moment format="MM/DD/YYYY">{track.updated_time}</Moment>
                 </li>
               </ul>
             </div>
