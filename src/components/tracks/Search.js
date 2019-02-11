@@ -12,7 +12,7 @@ class Search extends Component {
     });
   };
 
-  submit_search = event => {
+  submit_search = (dispatch, event) => {
     event.preventDefault();
     fetch(
       `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?q_track=${
@@ -25,6 +25,10 @@ class Search extends Component {
       .catch(error => console.error("Error: ", error))
       .then(res => {
         console.log("Response: ", res);
+        dispatch({
+          type: "SEARCH_TRACKS",
+          payload: res.message.body.track_list
+        });
         this.setState({
           trackTitle: ""
         });
@@ -35,13 +39,14 @@ class Search extends Component {
     return (
       <Consumer>
         {value => {
+          const { dispatch } = value;
           return (
             <div className="card card-body mb-4 p4">
               <h1 className="display-4 text-center">
                 <i className="fas fa-music" /> Search For A Song
               </h1>
               <p className="lead text-center">Get the lyrics for any song</p>
-              <form onSubmit={this.submit_search}>
+              <form onSubmit={this.submit_search.bind(this, dispatch)}>
                 <div className="form-group">
                   <input
                     type="text"
