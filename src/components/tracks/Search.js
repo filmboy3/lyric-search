@@ -6,6 +6,12 @@ class Search extends Component {
     trackTitle: ""
   };
 
+  updateTitle = event => {
+    this.setState({
+      trackTitle: event.target.value
+    });
+  };
+
   render() {
     return (
       <Consumer>
@@ -16,6 +22,18 @@ class Search extends Component {
                 <i className="fas fa-music" /> Search For A Song
               </h1>
               <p className="lead text-center">Get the lyrics for any song</p>
+              <form>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-control form-control-lg"
+                    placeholder="Song title..."
+                    name="trackTitle"
+                    value={this.state.trackTitle}
+                    onChange={this.updateTitle}
+                  />
+                </div>
+              </form>
             </div>
           );
         }}
