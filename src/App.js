@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { Provider } from "./context";
 import Index from "./components/layout/Index";
+import Lyrics from "./components/tracks/Lyrics";
 import NotFound from "./components/layout/NotFound";
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
             <div className="container">
               <Switch>
                 <Route exact path="/" component={Index} />
+                <Route exact path="/lyrics/track/:id/" component={Lyrics} />
                 <Route component={NotFound} />
               </Switch>
             </div>
